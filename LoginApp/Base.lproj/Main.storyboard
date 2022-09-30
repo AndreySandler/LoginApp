@@ -23,16 +23,19 @@
                                 <buttonConfiguration key="configuration" style="plain" title="Log In">
                                     <fontDescription key="titleFontDescription" name="Menlo-Regular" family="Menlo" pointSize="22"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="NXc-m7-Xwp" kind="presentation" modalPresentationStyle="fullScreen" id="i1f-Yd-lek"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="QAW-HO-crs">
                                 <rect key="frame" x="30" y="126" width="260" height="98"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jUF-Az-bX5">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" adjustsFontSizeToFit="NO" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="jUF-Az-bX5">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6PT-ub-HPB">
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="6PT-ub-HPB">
                                         <rect key="frame" x="0.0" y="64" width="260" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -48,6 +51,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot username?">
                                             <fontDescription key="titleFontDescription" name="Menlo-Regular" family="Menlo" pointSize="11"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgotButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hVU-rZ-NFE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YrQ-UN-BN5">
                                         <rect key="frame" x="151.5" y="0.0" width="136.5" height="27"/>
@@ -55,6 +61,9 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Forgot password?">
                                             <fontDescription key="titleFontDescription" name="Menlo-Regular" family="Menlo" pointSize="11"/>
                                         </buttonConfiguration>
+                                        <connections>
+                                            <action selector="forgotButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gfL-hr-70m"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -72,25 +81,59 @@
                             <constraint firstItem="vQb-nf-kUg" firstAttribute="top" secondItem="QAW-HO-crs" secondAttribute="bottom" constant="40" id="g2j-PR-zKu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="forgotPasswordButton" destination="YrQ-UN-BN5" id="aEq-IC-ejc"/>
+                        <outlet property="forgotUsernameButton" destination="CQh-jk-abV" id="khQ-NE-lBn"/>
+                        <outlet property="passwordTextField" destination="6PT-ub-HPB" id="9dK-XE-Z1E"/>
+                        <outlet property="userNameTextField" destination="jUF-Az-bX5" id="H9E-4q-t7L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="48" y="-2"/>
         </scene>
-        <!--View Controller-->
+        <!--Greeting View Controller-->
         <scene sceneID="91a-0c-7OL">
             <objects>
-                <viewController id="NXc-m7-Xwp" sceneMemberID="viewController">
+                <viewController id="NXc-m7-Xwp" customClass="GreetingViewController" customModule="LoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uau-Xl-2y9">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kgr-tI-WKY">
+                                <rect key="frame" x="160" y="60" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CXu-j6-x9s">
+                                <rect key="frame" x="101.5" y="465" width="117" height="40"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Log Out">
+                                    <fontDescription key="titleFontDescription" name="Menlo-Regular" family="Menlo" pointSize="22"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <segue destination="Hts-HP-IuF" kind="unwind" unwindAction="unwindFor:" id="Lgv-yt-y2G"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="iYB-9d-SaT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Kgr-tI-WKY" firstAttribute="top" secondItem="iYB-9d-SaT" secondAttribute="top" constant="60" id="SSg-Dn-8Pj"/>
+                            <constraint firstItem="Kgr-tI-WKY" firstAttribute="centerX" secondItem="uau-Xl-2y9" secondAttribute="centerX" id="WEd-fn-PUj"/>
+                            <constraint firstItem="iYB-9d-SaT" firstAttribute="bottom" secondItem="CXu-j6-x9s" secondAttribute="bottom" constant="63" id="Z1g-yW-tAc"/>
+                            <constraint firstItem="CXu-j6-x9s" firstAttribute="centerX" secondItem="uau-Xl-2y9" secondAttribute="centerX" id="qpu-pN-rmj"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="greetingLabel" destination="Kgr-tI-WKY" id="NeA-ja-dN2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="maf-r0-Vap" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Hts-HP-IuF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="756" y="-2"/>
+            <point key="canvasLocation" x="759" y="-2"/>
         </scene>
     </scenes>
     <resources>
