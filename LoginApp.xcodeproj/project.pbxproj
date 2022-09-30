@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		83984A8328E72C2D00C4222A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83984A8228E72C2D00C4222A /* AppDelegate.swift */; };
 		83984A8528E72C2D00C4222A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83984A8428E72C2D00C4222A /* SceneDelegate.swift */; };
-		83984A8728E72C2D00C4222A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83984A8628E72C2D00C4222A /* ViewController.swift */; };
+		83984A8728E72C2D00C4222A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83984A8628E72C2D00C4222A /* LoginViewController.swift */; };
 		83984A8A28E72C2D00C4222A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83984A8828E72C2D00C4222A /* Main.storyboard */; };
 		83984A8C28E72C2D00C4222A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83984A8B28E72C2D00C4222A /* Assets.xcassets */; };
 		83984A8F28E72C2D00C4222A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83984A8D28E72C2D00C4222A /* LaunchScreen.storyboard */; };
+		83984A9728E7702F00C4222A /* GreetingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83984A9628E7702F00C4222A /* GreetingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		83984A7F28E72C2D00C4222A /* LoginApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83984A8228E72C2D00C4222A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83984A8428E72C2D00C4222A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		83984A8628E72C2D00C4222A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		83984A8628E72C2D00C4222A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		83984A8928E72C2D00C4222A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		83984A8B28E72C2D00C4222A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83984A8E28E72C2D00C4222A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		83984A9028E72C2D00C4222A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		83984A9628E7702F00C4222A /* GreetingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreetingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,7 +60,8 @@
 			children = (
 				83984A8228E72C2D00C4222A /* AppDelegate.swift */,
 				83984A8428E72C2D00C4222A /* SceneDelegate.swift */,
-				83984A8628E72C2D00C4222A /* ViewController.swift */,
+				83984A8628E72C2D00C4222A /* LoginViewController.swift */,
+				83984A9628E7702F00C4222A /* GreetingViewController.swift */,
 				83984A8828E72C2D00C4222A /* Main.storyboard */,
 				83984A8B28E72C2D00C4222A /* Assets.xcassets */,
 				83984A8D28E72C2D00C4222A /* LaunchScreen.storyboard */,
@@ -138,9 +141,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83984A8728E72C2D00C4222A /* ViewController.swift in Sources */,
+				83984A8728E72C2D00C4222A /* LoginViewController.swift in Sources */,
 				83984A8328E72C2D00C4222A /* AppDelegate.swift in Sources */,
 				83984A8528E72C2D00C4222A /* SceneDelegate.swift in Sources */,
+				83984A9728E7702F00C4222A /* GreetingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +290,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = J572FQ3494;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoginApp/Info.plist;
@@ -300,7 +304,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndreySandler.LoginApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -318,7 +322,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = J572FQ3494;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoginApp/Info.plist;
@@ -332,7 +336,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.AndreySandler.LoginApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
