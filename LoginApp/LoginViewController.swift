@@ -60,7 +60,9 @@ extension LoginViewController {
             message: message,
             preferredStyle: .alert
         )
-        let okAction = UIAlertAction(title: "OK", style: .cancel)
+        let okAction = UIAlertAction(title: "OK", style: .cancel) { _ in
+            self.passwordTextField.text = ""
+        }
         
         alert.addAction(okAction)
         present(alert, animated: true)
