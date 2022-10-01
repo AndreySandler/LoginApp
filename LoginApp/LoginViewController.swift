@@ -16,6 +16,7 @@ class LoginViewController: UIViewController {
     @IBOutlet var forgotUsernameButton: UIButton!
     @IBOutlet var forgotPasswordButton: UIButton!
     
+    // MARK: - Override Methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
         
@@ -25,7 +26,11 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let greetingVC = segue.destination as? GreetingViewController else { return }
         
-        greetingVC.greeting = userNameTextField.text
+        if (userNameTextField.text, passwordTextField.text) == ("User", "Password") {
+            greetingVC.greeting = userNameTextField.text
+        } else {
+            showAlert(withTitle: "Oops", andMessage: "Wrong username or password")
+        }
     }
     
     // MARK: - IBAction
@@ -39,7 +44,10 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
+        guard segue.source is GreetingViewController else { return }
         
+        userNameTextField.text = ""
+        passwordTextField.text = ""
     }
 }
 

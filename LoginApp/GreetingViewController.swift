@@ -12,13 +12,14 @@ class GreetingViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet var greetingLabel: UILabel!
     
-    // MARK: - Public properties
+    // MARK: - Public Properties
     var greeting: String!
     
+    // MARK: - Override Methods
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        greetingLabel.text = "Welcome, " + greeting
+        greetingLabel.text = "Welcome, " + (greeting ?? "")
     }
     
 }
