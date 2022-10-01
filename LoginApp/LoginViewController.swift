@@ -48,6 +48,7 @@ class LoginViewController: UIViewController {
         
         userNameTextField.text = ""
         passwordTextField.text = ""
+        dismiss(animated: true)
     }
 }
 
