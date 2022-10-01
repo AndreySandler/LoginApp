@@ -29,7 +29,7 @@ class LoginViewController: UIViewController {
         if (userNameTextField.text, passwordTextField.text) == ("User", "Pass") {
             greetingVC.greeting = userNameTextField.text
         } else {
-            showAlert(withTitle: "Oops", andMessage: "Wrong username or password")
+            showAlert(withTitle: "Oops", andMessage: "Wrong username or pass")
         }
     }
     
@@ -54,11 +54,14 @@ class LoginViewController: UIViewController {
 // MARK: - UIAlertController
 extension LoginViewController {
     private func showAlert(withTitle title: String, andMessage message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let alert = UIAlertController(
+            title: title,
+            message: message,
+            preferredStyle: .alert
+        )
         let okAction = UIAlertAction(title: "OK", style: .cancel)
         
         alert.addAction(okAction)
         present(alert, animated: true)
     }
 }
-
