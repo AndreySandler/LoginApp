@@ -26,7 +26,7 @@ class LoginViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let greetingVC = segue.destination as? GreetingViewController else { return }
         
-        if (userNameTextField.text, passwordTextField.text) == ("User", "Password") {
+        if (userNameTextField.text, passwordTextField.text) == ("User", "Pass") {
             greetingVC.greeting = userNameTextField.text
         } else {
             showAlert(withTitle: "Oops", andMessage: "Wrong username or password")
@@ -37,9 +37,9 @@ class LoginViewController: UIViewController {
     @IBAction func forgotButtonDidTapped(_ sender: UIButton) {
         switch sender {
         case forgotUsernameButton:
-            showAlert(withTitle: "Oops", andMessage: "Your name is User")
+            showAlert(withTitle: "Really?", andMessage: "Your name is User")
         default:
-            showAlert(withTitle: "Oops", andMessage: "Your pass is Password")
+            showAlert(withTitle: "Really?", andMessage: "Your pass is Pass")
         }
     }
     
