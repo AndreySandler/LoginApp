@@ -16,9 +16,9 @@ class LoginViewController: UIViewController {
     @IBOutlet var forgotUsernameButton: UIButton!
     @IBOutlet var forgotPasswordButton: UIButton!
     
-    // MARK: - Public Properties
-    let username = "User"
-    let password = "Pass"
+    // MARK: - Private Properties
+    private let username = "User"
+    private let password = "Pass"
     
     // MARK: - Override Methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
