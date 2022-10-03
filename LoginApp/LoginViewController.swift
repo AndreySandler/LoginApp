@@ -16,39 +16,42 @@ class LoginViewController: UIViewController {
     @IBOutlet var forgotUsernameButton: UIButton!
     @IBOutlet var forgotPasswordButton: UIButton!
     
+    // MARK: - Public Properties
+    let username = "User"
+    let password = "Pass"
+    
     // MARK: - Override Methods
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super .touchesBegan(touches, with: event)
         
-        self.view.endEditing(true)
+        view.endEditing(true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let greetingVC = segue.destination as? GreetingViewController else { return }
         
-        if (userNameTextField.text, passwordTextField.text) == ("User", "Pass") {
-            greetingVC.greeting = userNameTextField.text
-        } else {
-            showAlert(withTitle: "Oops", andMessage: "Wrong username or pass")
-        }
+        greetingVC.greeting = userNameTextField.text
     }
     
     // MARK: - IBAction
     @IBAction func forgotButtonDidTapped(_ sender: UIButton) {
         switch sender {
         case forgotUsernameButton:
-            showAlert(withTitle: "Really?", andMessage: "Your name is User")
+            showAlert(withTitle: "Really?", andMessage: "Your name is \(username)")
         default:
-            showAlert(withTitle: "Really?", andMessage: "Your pass is Pass")
+            showAlert(withTitle: "Really?", andMessage: "Your pass is \(password)")
+        }
+    }
+    
+    @IBAction func logiinButtonDidTapped() {
+        if (username, password) != (userNameTextField.text, passwordTextField.text) {
+            showAlert(withTitle: "Oops", andMessage: "Wrong pass or username")
         }
     }
     
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        guard segue.source is GreetingViewController else { return }
-        
         userNameTextField.text = ""
         passwordTextField.text = ""
-        dismiss(animated: true)
     }
 }
 
@@ -60,7 +63,7 @@ extension LoginViewController {
             message: message,
             preferredStyle: .alert
         )
-        let okAction = UIAlertAction(title: "OK", style: .cancel) { _ in
+        let okAction = UIAlertAction(title: "OK", style: .default) { _ in
             self.passwordTextField.text = ""
         }
         

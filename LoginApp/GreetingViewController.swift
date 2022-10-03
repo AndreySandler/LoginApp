@@ -10,7 +10,6 @@ import UIKit
 class GreetingViewController: UIViewController {
 
     // MARK: - IBOutlets
-    @IBOutlet var greetingView: UIView!
     @IBOutlet var greetingLabel: UILabel!
     
     // MARK: - Public Properties
